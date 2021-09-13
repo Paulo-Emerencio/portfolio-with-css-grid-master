@@ -1,0 +1,29 @@
+@use '../util' as *;
+
+body {
+   font-family: $ff-s;
+   font-size: .875rem;
+   line-height: 1.6;
+   color: $gray;
+   background-color: $white;
+}
+
+h1, h2, p {
+   margin-top: 0;
+   margin-bottom: 1em;
+}
+
+h1 {
+   font-size: Rem(50);
+   line-height: 1;
+   color: $accent;
+
+   span {
+      display: block;
+      @include sans-serif($fs: 5.5rem, $c: $accent);
+   }
+}
+
+h2 {
+   @include sans-serif($fs: 2rem)
+}

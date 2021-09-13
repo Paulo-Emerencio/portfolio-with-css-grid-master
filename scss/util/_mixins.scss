@@ -1,0 +1,11 @@
+@use 'colors' as *;
+@use 'typography' as *;
+
+@mixin sans-serif($fs, $lh: 1, $ls: .23em, $tt: uppercase, $c: $gray) {
+   font-family: $ff-ss;
+   font-size: $fs;
+   line-height: $lh;
+   letter-spacing: $ls;
+   text-transform: $tt;
+   color: $c;
+}
