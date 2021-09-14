@@ -1,0 +1,33 @@
+@use '../util' as *;
+
+.about {
+   display: grid;
+   grid-template-columns:
+      [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end];
+      
+   @include container;
+   margin-top: 3em;
+
+   &-img {
+      max-height: 25em;
+
+      grid-column: port-start / img-end;
+      //Você pode ocultar o -start e -end que funciona da mesma forma.
+      grid-row: 1 / 2;
+   }
+
+   &-title {
+      grid-column: name-start / port-end;
+      grid-row: 1 / 2;
+      align-self: end;
+      margin-bottom: 0.25em;
+   }
+
+   &-subtitle, &-text {
+      grid-column: port / port;
+   }
+
+   &-subtitle {
+      margin: 0.5em 0;
+   }
+}

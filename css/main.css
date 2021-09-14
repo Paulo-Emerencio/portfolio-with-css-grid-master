@@ -405,4 +405,30 @@ h2 {
   min-width: 100%;
 }
 
+.about {
+  display: grid;
+  grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end];
+  width: 90%;
+  max-width: 50em;
+  margin: 0 auto;
+  margin-top: 3em;
+}
+.about-img {
+  max-height: 25em;
+  grid-column: port-start/img-end;
+  grid-row: 1/2;
+}
+.about-title {
+  grid-column: name-start/port-end;
+  grid-row: 1/2;
+  align-self: end;
+  margin-bottom: 0.25em;
+}
+.about-subtitle, .about-text {
+  grid-column: port/port;
+}
+.about-subtitle {
+  margin: 0.5em 0;
+}
+
 /*# sourceMappingURL=main.css.map */

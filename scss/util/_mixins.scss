@@ -9,3 +9,9 @@
    text-transform: $tt;
    color: $c;
 }
+
+@mixin container($width: 90%, $max-width: 50em) {
+   width: $width;
+   max-width: $max-width;
+   margin: 0 auto;
+}
