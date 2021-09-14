@@ -8,6 +8,10 @@ body {
    background-color: $white;
 }
 
+img {
+   max-width: 100%;
+}
+
 h1, h2, p {
    margin-top: 0;
    margin-bottom: 1em;
@@ -17,11 +21,6 @@ h1 {
    font-size: Rem(50);
    line-height: 1;
    color: $accent;
-
-   span {
-      display: block;
-      @include sans-serif($fs: 5.5rem, $c: $accent);
-   }
 }
 
 h2 {

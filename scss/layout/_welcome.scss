@@ -1,0 +1,40 @@
+@use '../util' as *;
+
+.welcome {
+   background-image: url('../img/header-bg.png');
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   h1 {
+      font-size: 1.5rem;
+      font-weight: $fw-n;
+      color: $darkBlue;
+      line-height: 2;
+      text-align: center;
+
+      span {
+         display: block;
+         @include sans-serif($fs: 5.5rem, $c: $accent);
+         margin-right: -.15em;
+      }
+
+      &::before,
+      &::after {
+         content: '';
+         display: block;
+         width: 40%;
+         height: 1px;
+         background-color: $darkBlue;
+      }
+      &::before {
+         margin: 0 auto 2em;
+      }
+      &::after {
+         margin: 2em auto 0;
+      }
+   }
+}
