@@ -1,0 +1,91 @@
+@use '../util' as *;
+
+.portfolio {
+   text-align: center;
+   background-color: $lightGray;
+   padding: 5em 0;
+
+   &-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      //gap: 1em;
+
+      @include container;
+   }
+
+   &-item {
+      position: relative;
+      overflow: hidden;
+
+      &.featured {
+         grid-column: 1 / span 2; // Column: 1 /... -> has to start from the left
+         grid-row: 1 / span 2; // Row: 1 /... -> has to start from the top
+      }
+
+      img {
+         display: block;
+      }
+
+      figcaption {
+         display: flex;
+         flex-direction: column;
+
+         position: absolute;
+         top: 100%;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         background-color: rgba($accent, .75);
+         padding: 2em;
+
+         color: $white;
+         text-align: left;
+
+         transition: top ease-in-out 250ms;
+      }
+
+      &:hover figcaption,
+      &:focus figcaption {
+         //:focus para funcionar no mobile clicando com o dedo
+         top: 0;
+      }
+   }
+
+   &-title {
+      color: $white;
+      font-size: 2.5rem;
+      margin-bottom: auto;
+
+      .featured & {
+         font-size: 5rem;
+      }
+   }
+
+   &-desc {
+      display: none;
+
+      .featured & {
+         // & tbm pode ser usado para referenciar o seletor pai depois de outro seletor
+         // Aqui estou dizendo que só o .portfolio-desc que for filho da classe .featured vai ter o display block
+         display: block;
+      }
+   }
+
+   &-link {
+      color: $white;
+      font-weight: $fw-b;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-bottom: 3px solid $white;
+      align-self: flex-start;
+      // Por padrão, filhos de flex column são esticados até a ponta, align-self: start; está aqui para corrigir isso e deixar o border-bottom do tamanho do texto.
+
+      &::after {
+         content: url('../img/arrow-white.svg');
+         display: inline-block;
+         width: .8em;
+         height: .8em;
+         margin-left: .5em;
+      }
+   }
+}

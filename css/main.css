@@ -327,6 +327,7 @@ h2 {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #a7a7a7;
+  font-weight: 400;
 }
 
 .welcome {
@@ -375,7 +376,6 @@ h2 {
 }
 .intro h2 {
   color: #fff;
-  font-weight: 400;
 }
 .intro h2::after {
   content: "";
@@ -411,7 +411,8 @@ h2 {
   width: 90%;
   max-width: 50em;
   margin: 0 auto;
-  margin-top: 3em;
+  margin-top: 5em;
+  margin-bottom: 5em;
 }
 .about-img {
   max-height: 25em;
@@ -429,6 +430,76 @@ h2 {
 }
 .about-subtitle {
   margin: 0.5em 0;
+}
+
+.portfolio {
+  text-align: center;
+  background-color: #e8e9eb;
+  padding: 5em 0;
+}
+.portfolio-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+  max-width: 50em;
+  margin: 0 auto;
+}
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-item.featured {
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+}
+.portfolio-item img {
+  display: block;
+}
+.portfolio-item figcaption {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(3, 175, 194, 0.75);
+  padding: 2em;
+  color: #fff;
+  text-align: left;
+  transition: top ease-in-out 250ms;
+}
+.portfolio-item:hover figcaption, .portfolio-item:focus figcaption {
+  top: 0;
+}
+.portfolio-title {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: auto;
+}
+.featured .portfolio-title {
+  font-size: 5rem;
+}
+.portfolio-desc {
+  display: none;
+}
+.featured .portfolio-desc {
+  display: block;
+}
+.portfolio-link {
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: 3px solid #fff;
+  align-self: flex-start;
+}
+.portfolio-link::after {
+  content: url("../img/arrow-white.svg");
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.5em;
 }
 
 /*# sourceMappingURL=main.css.map */

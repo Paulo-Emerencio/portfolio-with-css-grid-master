@@ -1,3 +1,6 @@
-@function Rem($n) {
-   @return ($n / 16) + rem;
+@use "sass:math";
+// Necessário para usar o math.div
+
+@function Rem($pixels, $context: 16) {
+   @return math.div($pixels, $context) + rem;
 }

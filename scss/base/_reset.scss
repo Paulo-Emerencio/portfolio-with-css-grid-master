@@ -24,5 +24,6 @@ h1 {
 }
 
 h2 {
-   @include sans-serif($fs: 2rem)
+   @include sans-serif($fs: 2rem);
+   font-weight: $fw-n;
 }
