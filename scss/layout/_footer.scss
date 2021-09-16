@@ -1,0 +1,29 @@
+@use '../util' as *;
+
+footer {
+   background: $darkBlue;
+   padding: 5em 0;
+   text-align: center;
+}
+
+.social-icons {
+   display: flex;
+   justify-content: space-between;
+   @include container($max-width: 15em);
+   margin: 1.75em auto 4em;
+}
+
+.social-icon {
+   width: 25%;
+}
+
+.copyright {
+   &::before {
+      content: '';
+      display: block;
+      width: 25%;
+      height: 1px;
+      background: rgba($white, .15);
+      margin: 4em auto;
+   }
+}

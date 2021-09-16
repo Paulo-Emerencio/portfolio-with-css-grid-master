@@ -474,7 +474,7 @@ h2 {
 }
 .portfolio-title {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: auto;
 }
 .featured .portfolio-title {
@@ -489,7 +489,7 @@ h2 {
 .portfolio-link {
   color: #fff;
   font-weight: 900;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   border-bottom: 3px solid #fff;
   align-self: flex-start;
@@ -500,6 +500,77 @@ h2 {
   width: 0.8em;
   height: 0.8em;
   margin-left: 0.5em;
+}
+.featured .portfolio-link {
+  font-size: 1.1rem;
+}
+
+.contact {
+  width: 90%;
+  max-width: 50em;
+  margin: 0 auto;
+  padding: 5em 0;
+}
+.contact h1 {
+  text-align: center;
+}
+.contact label {
+  display: block;
+  color: #606060;
+  margin-top: 1em;
+}
+.contact input, .contact textarea {
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.2rem;
+  width: 100%;
+  background: #fbfbfc;
+  padding: 0.75em;
+  border: 1px solid #e8e9eb;
+}
+.contact .button {
+  display: block;
+  width: auto;
+  margin-top: 1em;
+  margin-left: auto;
+  background: #03afc2;
+  padding: 0.5em 1.5em;
+  border: none;
+  cursor: pointer;
+  font-family: "Six Caps", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+footer {
+  background: #223843;
+  padding: 5em 0;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 15em;
+  margin: 0 auto;
+  margin: 1.75em auto 4em;
+}
+
+.social-icon {
+  width: 25%;
+}
+
+.copyright::before {
+  content: "";
+  display: block;
+  width: 25%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 4em auto;
 }
 
 /*# sourceMappingURL=main.css.map */

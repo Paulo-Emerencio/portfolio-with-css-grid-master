@@ -1,0 +1,38 @@
+@use '../util' as *;
+
+.contact {
+   @include container;
+   padding: 5em 0;
+
+   h1 {
+      text-align: center;
+   }
+
+   label {
+      display: block;
+      color: $darkGray;
+      margin-top: 1em;
+   }
+
+   input, textarea {
+      box-sizing: border-box;
+      display: block;
+      font-size: 1.2rem;
+      width: 100%;
+      background: lighten($lightGray, 7%);
+      padding: .75em;
+      border: 1px solid $lightGray;
+   }
+
+   .button {
+      display: block;
+      width: auto;
+      margin-top: 1em;
+      margin-left: auto;
+      background: $accent;
+      padding: 0.5em 1.5em;
+      border: none;
+      cursor: pointer;
+      @include sans-serif($fs: 2rem, $c: $white)
+   }
+}
