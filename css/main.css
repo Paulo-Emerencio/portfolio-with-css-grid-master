@@ -304,6 +304,11 @@ body {
   color: #a7a7a7;
   background-color: #fff;
 }
+@media (min-width: 50em) {
+  body {
+    font-size: 1.125rem;
+  }
+}
 
 img {
   max-width: 100%;
@@ -319,6 +324,11 @@ h1 {
   line-height: 1;
   color: #03afc2;
 }
+@media (min-width: 50em) {
+  h1 {
+    font-size: 4.25rem;
+  }
+}
 
 h2 {
   font-family: "Six Caps", sans-serif;
@@ -328,6 +338,11 @@ h2 {
   text-transform: uppercase;
   color: #a7a7a7;
   font-weight: 400;
+}
+@media (min-width: 50em) {
+  h2 {
+    font-size: 3rem;
+  }
 }
 
 .welcome {
@@ -346,6 +361,11 @@ h2 {
   line-height: 2;
   text-align: center;
 }
+@media (min-width: 50em) {
+  .welcome h1 {
+    font-size: 3vw;
+  }
+}
 .welcome h1 span {
   display: block;
   font-family: "Six Caps", sans-serif;
@@ -355,6 +375,11 @@ h2 {
   text-transform: uppercase;
   color: #03afc2;
   margin-right: -0.15em;
+}
+@media (min-width: 50em) {
+  .welcome h1 span {
+    font-size: 10vw;
+  }
 }
 .welcome h1::before, .welcome h1::after {
   content: "";
@@ -414,10 +439,20 @@ h2 {
   margin-top: 5em;
   margin-bottom: 5em;
 }
+@media (min-width: 50em) {
+  .about {
+    grid-template-columns: [port-start] 10em [name-start] 10em [img-end] 1fr [port-end];
+  }
+}
 .about-img {
   max-height: 25em;
   grid-column: port-start/img-end;
   grid-row: 1/2;
+}
+@media (min-width: 50em) {
+  .about-img {
+    grid-row: 1/4;
+  }
 }
 .about-title {
   grid-column: name-start/port-end;
@@ -425,11 +460,25 @@ h2 {
   align-self: end;
   margin-bottom: 0.25em;
 }
+@media (min-width: 50em) {
+  .about-title {
+    grid-column: name-start/img-end;
+  }
+}
 .about-subtitle, .about-text {
   grid-column: port/port;
 }
+@media (min-width: 50em) {
+  .about-subtitle, .about-text {
+    grid-column: img-end/port-end;
+  }
+}
 .about-subtitle {
   margin: 0.5em 0;
+  grid-row: 2/3;
+}
+.about-text {
+  grid-row: 3/4;
 }
 
 .portfolio {
@@ -443,6 +492,11 @@ h2 {
   width: 90%;
   max-width: 50em;
   margin: 0 auto;
+}
+@media (min-width: 50em) {
+  .portfolio-items {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .portfolio-item {
   position: relative;
@@ -510,6 +564,28 @@ h2 {
   max-width: 50em;
   margin: 0 auto;
   padding: 5em 0;
+}
+@media (min-width: 50em) {
+  .contact form {
+    display: grid;
+    column-gap: 1em;
+    grid-template-areas: "name    email" "message message" "   .    button";
+  }
+  .contact form .name {
+    grid-area: name;
+  }
+  .contact form .email {
+    grid-area: email;
+  }
+  .contact form .message {
+    grid-area: message;
+  }
+  .contact form .message textarea {
+    height: 10em;
+  }
+  .contact form .button {
+    grid-area: button;
+  }
 }
 .contact h1 {
   text-align: center;

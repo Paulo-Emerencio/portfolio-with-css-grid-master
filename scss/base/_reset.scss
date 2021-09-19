@@ -6,6 +6,10 @@ body {
    line-height: 1.6;
    color: $gray;
    background-color: $white;
+
+   @include mq {
+      font-size: 1.125rem;
+   }
 }
 
 img {
@@ -21,9 +25,17 @@ h1 {
    font-size: Rem(50);
    line-height: 1;
    color: $accent;
+
+   @include mq {
+      font-size: 4.25rem;
+   }
 }
 
 h2 {
    @include sans-serif($fs: 2rem);
    font-weight: $fw-n;
+
+   @include mq {
+      font-size: 3rem;
+   }
 }

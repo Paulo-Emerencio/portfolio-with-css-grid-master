@@ -4,6 +4,33 @@
    @include container;
    padding: 5em 0;
 
+   @include mq {
+      form {
+         display: grid;
+         column-gap: 1em;
+         grid-template-areas:
+            "name    email"
+            "message message"
+            "   .    button";
+            
+         .name {
+            grid-area: name;
+         }
+         .email {
+            grid-area: email;
+         }
+         .message {
+            grid-area: message;
+            textarea {
+               height: 10em;
+            }
+         }
+         .button {
+            grid-area: button;
+         }
+      }
+   }
+
    h1 {
       text-align: center;
    }

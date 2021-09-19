@@ -4,6 +4,11 @@
    display: grid;
    grid-template-columns:
       [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end];
+
+   @include mq {
+      grid-template-columns:
+       [port-start] 10em [name-start] 10em [img-end] 1fr [port-end];
+   }
       
    @include container;
    margin-top: 5em;
@@ -13,8 +18,11 @@
       max-height: 25em;
 
       grid-column: port-start / img-end;
-      //Você pode ocultar o -start e -end que funciona da mesma forma.
       grid-row: 1 / 2;
+
+      @include mq {
+         grid-row: 1 / 4;
+      }
    }
 
    &-title {
@@ -22,13 +30,27 @@
       grid-row: 1 / 2;
       align-self: end;
       margin-bottom: 0.25em;
+
+      @include mq {
+         grid-column: name-start / img-end;
+      }
    }
 
    &-subtitle, &-text {
       grid-column: port / port;
+      //Você pode ocultar o -start e -end que funciona da mesma forma.
+
+      @include mq {
+         grid-column: img-end / port-end;
+      }
    }
 
    &-subtitle {
       margin: 0.5em 0;
+      grid-row: 2 / 3;
+   }
+
+   &-text {
+      grid-row: 3 / 4;
    }
 }
