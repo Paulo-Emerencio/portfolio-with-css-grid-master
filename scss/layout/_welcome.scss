@@ -1,6 +1,7 @@
 @use '../util' as *;
 
 .welcome {
+   position: relative;
    background-image: url('../img/header-bg.png');
    background-size: cover;
    background-position: center;

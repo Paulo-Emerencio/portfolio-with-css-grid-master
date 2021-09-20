@@ -1,0 +1,52 @@
+@use '../util' as *;
+
+nav {
+   position: fixed;
+   top: 0;
+   right: 15%;
+   bottom: 0;
+   left: 0;
+   
+   z-index: 10;
+
+   ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: stretch;
+   
+      height: 100vh;
+      background: $accent;
+      padding: 0;
+      margin: 0;
+   
+      list-style: none;
+   }
+
+   li {
+      border-bottom: 1px solid $darkBlue;
+      text-align: center;
+
+      &:hover {
+         background: rgba($darkBlue, .5);
+      }
+   }
+
+   a {
+      display: inline-block;
+      width: 100%;
+      @include sans-serif($fs: 4rem, $c: $darkBlue);
+      padding: calc(100vh/8) 0;
+      //padding top e bottom dividido em 8 partes iguais da altura da tela
+      line-height: 0; //para a altura do texto não contar no cálculo do padding
+      text-decoration: none;
+   }
+}
+
+.menu-button {
+   position: absolute;
+   top: 3em;
+   left: 3em;
+   background: transparent;
+   border: 0;
+}

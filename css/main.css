@@ -345,7 +345,56 @@ h2 {
   }
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  right: 15%;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 100vh;
+  background: #03afc2;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+nav li {
+  border-bottom: 1px solid #223843;
+  text-align: center;
+}
+nav li:hover {
+  background: rgba(34, 56, 67, 0.5);
+}
+nav a {
+  display: inline-block;
+  width: 100%;
+  font-family: "Six Caps", sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #223843;
+  padding: calc(100vh/8) 0;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.menu-button {
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  background: transparent;
+  border: 0;
+}
+
 .welcome {
+  position: relative;
   background-image: url("../img/header-bg.png");
   background-size: cover;
   background-position: center;
