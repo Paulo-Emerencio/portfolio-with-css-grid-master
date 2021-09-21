@@ -31,6 +31,10 @@
       align-self: end;
       margin-bottom: 0.25em;
 
+      @media (max-width: 22.25em) {
+         font-size: Rem(42);
+      }
+
       @include mq {
          grid-column: name-start / img-end;
       }

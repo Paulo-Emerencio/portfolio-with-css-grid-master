@@ -3,11 +3,13 @@
 nav {
    position: fixed;
    top: 0;
-   right: 15%;
+   right: 20%;
    bottom: 0;
    left: 0;
-   
    z-index: 10;
+
+   transform: translateX(-100%);
+   transition: transform ease-out 250ms;
 
    ul {
       display: flex;
@@ -45,8 +47,35 @@ nav {
 
 .menu-button {
    position: absolute;
-   top: 3em;
-   left: 3em;
+   top: 2em;
+   left: 2em;
    background: transparent;
    border: 0;
+   cursor: pointer;
+}
+
+.close-icon {
+   display: none;
+}
+
+.container-all {
+   transition: transform ease-out 250ms;
+}
+
+.nav-is-open {
+   nav {
+      transform: translateX(0);
+   }
+   .container-all {
+      transform: translateX(80%);
+   }
+   .hamburger {
+      display: none;
+   }
+   .close-icon {
+      display: block;
+   }
+   .menu-button {
+      transform: translateX(-40%);
+   }
 }

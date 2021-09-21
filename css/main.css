@@ -348,10 +348,12 @@ h2 {
 nav {
   position: fixed;
   top: 0;
-  right: 15%;
+  right: 20%;
   bottom: 0;
   left: 0;
   z-index: 10;
+  transform: translateX(-100%);
+  transition: transform ease-out 250ms;
 }
 nav ul {
   display: flex;
@@ -387,10 +389,35 @@ nav a {
 
 .menu-button {
   position: absolute;
-  top: 3em;
-  left: 3em;
+  top: 2em;
+  left: 2em;
   background: transparent;
   border: 0;
+  cursor: pointer;
+}
+
+.close-icon {
+  display: none;
+}
+
+.container-all {
+  transition: transform ease-out 250ms;
+}
+
+.nav-is-open nav {
+  transform: translateX(0);
+}
+.nav-is-open .container-all {
+  transform: translateX(80%);
+}
+.nav-is-open .hamburger {
+  display: none;
+}
+.nav-is-open .close-icon {
+  display: block;
+}
+.nav-is-open .menu-button {
+  transform: translateX(-40%);
 }
 
 .welcome {
@@ -399,6 +426,7 @@ nav a {
   background-size: cover;
   background-position: center;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -508,6 +536,11 @@ nav a {
   grid-row: 1/2;
   align-self: end;
   margin-bottom: 0.25em;
+}
+@media (max-width: 22.25em) {
+  .about-title {
+    font-size: 2.625rem;
+  }
 }
 @media (min-width: 50em) {
   .about-title {
