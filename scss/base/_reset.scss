@@ -6,6 +6,7 @@ body {
    line-height: 1.6;
    color: $gray;
    background-color: $white;
+   //overflow-x: hidden;
 
    @include mq {
       font-size: 1.125rem;
