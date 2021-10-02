@@ -107,15 +107,26 @@
    bottom: 2em;
    left: 2em;
    background: $white;
-   box-shadow: 0 0 0 3em rgba(black, .5);
+   box-shadow: 0 0 0 100vw rgba(black, .5);
    overflow-y: scroll;
    overflow-x: hidden;
+
+   display: none;
+
+   @include mq {
+      right: calc(30vw - 2em);
+      left: calc(30vw - 2em);
+   }
+
+   &.is-open {
+      display: block;
+   }
 
    .modal-close {
       position: fixed;
       left: 1em;
       top: 1em;
-      width: 2rem;
+      width: 2em;
       height: 2em;
       background: $white;
       padding: 4px 0 0;
@@ -123,17 +134,37 @@
       border-radius: 50%;
       box-shadow: 0 0 5px rgba(black, .5);
       cursor: pointer;
+
+      @include mq {
+         left: calc(29vw - 2em);
+      }
    }
 
    .portfolio-header {
       text-align: left;
       padding: 5em 0;
       margin-bottom: 2em;
+      background-size: cover;
+      background-position: center;
 
-      &:nth-of-type(1) {
+      &.header-one {
          background-image: url('../img/portfolio-01.jpg');
-         background-size: cover;
-         background-position: center;
+      }
+
+      &.header-two {
+         background-image: url('../img/portfolio-02.jpg');
+      }
+
+      &.header-three {
+         background-image: url('../img/portfolio-03.jpg');
+      }
+
+      &.header-four {
+         background-image: url('../img/portfolio-04.jpg');
+      }
+
+      &.header-five {
+         background-image: url('../img/portfolio-05.jpg');
       }
 
       .portfolio-title-box {
@@ -163,6 +194,7 @@
    }
    
    .portfolio-content {
+      font-size: .875rem;
       text-align: left;
       width: 85%;
       margin: 0 auto;
@@ -176,20 +208,33 @@
          object-fit: cover;
       }
 
+      .portfolio-pull-left,
+      .portfolio-pull-right {
+         margin: 2em 0;
+      }
+
       @include mq {
          .portfolio-pull-left {
             width: 65%;
             float: left;
             margin-right: 2em;
-            margin-bottom: 0.5em;
          }
 
          .portfolio-pull-right {
             width: 65%;
             float: right;
             margin-left: 2em;
-            margin-bottom: 0.5em;
          }
       }
    }
+}
+
+@keyframes modalIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@keyframes modalOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;}
 }
